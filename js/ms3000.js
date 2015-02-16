@@ -2,8 +2,8 @@ $(document).ready(function() {
 
 	$('.category').click(function(e){
         e.preventDefault(); //stop default action of the link
-		cat = $(this).attr("href");  //get category from URL
-		loadAJAX(cat);  //load AJAX and parse JSON file
+		  cat = $(this).attr("href");  //get category from URL
+		  loadAJAX(cat);  //load AJAX and parse JSON file
 	});
 });	
 
@@ -14,7 +14,7 @@ function loadAJAX(cat)
 		type: "GET",
 		dataType: "json",  
 		url: "api.php?cat=" + cat,
-		success: bondJSON,
+		success: ms3000JSON,
 	});
 
 	$('#episodes').html('');//clear data
@@ -41,7 +41,7 @@ function mysteryJSON(data){
 		text += '<b>Writers</b>: ' + item.Writers + '<br />';
         text += '<b>Stars</b>: ' + item.Stars + '<br />';
         text += '<b>Synopsis</b>: ' + item.Synopsis + '<br />';
-		text += '<div id="pic"><img src="thumbnails/' + item.Image + '" /></div>';
+		text += '<div id="pic"><img src= "item.Image" /></div>';
 		$('<div></div>').html(text).appendTo('#episodes');  
 	});
 }
