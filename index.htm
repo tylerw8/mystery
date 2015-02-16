@@ -69,7 +69,7 @@ function toConsole(data)
 }
 
 function ms3000JSON(data){
-	//$('#output').text(JSON.stringify(data));  //uncomment to view raw output
+    $('#output').text(JSON.stringify(data));  //uncomment to view raw output
 	var header = data.title;
 	$('#episodetitle').html(header);
 	$.each(data.films, function(i,item){
