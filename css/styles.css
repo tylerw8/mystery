@@ -15,6 +15,10 @@ body {font-family:georgia;}
 	position:relative; /* required to place #pic to right */
 }
 
+h1 {
+  font-family: Orbitron;
+}
+
 #films h3 {
 	font-family:georgia;
 	padding:5px;
