@@ -14,8 +14,8 @@ function loadAJAX(cat)
 		type: "GET",
 		dataType: "json",  
 		url: "api.php?cat=" + cat,
-		//success: ms3000JSON,
-        success: toConsole
+		success: ms3000JSON,
+        //success: toConsole
 	});
 
 	$('#episodes').html('');//clear data
