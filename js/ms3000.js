@@ -14,7 +14,8 @@ function loadAJAX(cat)
 		type: "GET",
 		dataType: "json",  
 		url: "api.php?cat=" + cat,
-		success: ms3000JSON,
+		//success: ms3000JSON,
+        success: toConsole,
 	});
 
 	$('#episodes').html('');//clear data
@@ -26,7 +27,7 @@ function toConsole(data)
 }
 
 function ms3000JSON(data){
-	$('#output').text(JSON.stringify(data));  //uncomment to view raw output
+	//$('#output').text(JSON.stringify(data));  //uncomment to view raw output
 	var header = data.title;
 	$('#episodetitle').html(header);
 	$.each(data.films, function(i,item){
