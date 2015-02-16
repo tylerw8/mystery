@@ -26,7 +26,7 @@ function toConsole(data)
 }
 
 function mysteryJSON(data){
-	//$('#output').text(JSON.stringify(data));  //uncomment to view raw output
+	$('#output').text(JSON.stringify(data));  //uncomment to view raw output
 	var header = data.title;
 	$('#episodetitle').html(header);
 	$.each(data.films, function(i,item){
