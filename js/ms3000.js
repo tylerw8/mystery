@@ -25,7 +25,7 @@ function toConsole(data)
 	console.log(data); //to view,use Chrome console, ctrl + shift + j
 }
 
-function mysteryJSON(data){
+function ms3000JSON(data){
 	$('#output').text(JSON.stringify(data));  //uncomment to view raw output
 	var header = data.title;
 	$('#episodetitle').html(header);
