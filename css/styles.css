@@ -1,25 +1,26 @@
 body {font-family:georgia;}
-#films {
-	max-width:600px;
-	margin:5px;
-	padding:2px;
+#episodes {
+	max-width:100%;
+	margin:1em;
+	padding:1em;
 }
-#films > div {
-	padding:5px;
+#episodes > div {
+	padding:1em;
 	min-height:40px;
-	margin-bottom:5px;
-	border:1px solid #E77D2C;
+	margin-bottom:1em;
+	border:1px solid #0000ff;
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	position:relative; /* required to place #pic to right */
+    box-shadow: 10px 10px 5px #888888;
 }
 
 h1 {
   font-family: Orbitron;
 }
 
-#films h3 {
+#episodes h3 {
 	font-family:georgia;
 	padding:5px;
 	color:#fff;
@@ -27,10 +28,13 @@ h1 {
 	margin:0;
 }
 
-#pic{
+#pic img {
 	position:absolute;
 	right:10px;
 	top:10px;
-    width: 50px;
-    height: 100px;
+}
+
+#pic img {
+    max-width: 100px;
+    max-height: 150px;
 }
