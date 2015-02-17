@@ -1,35 +1,7 @@
 <!doctype html>
 <html>
 <!--Tyler Waite's A8 Web Service-->
-<!--
- /**
- * index.htm is a demo file to  work with a sample API file to be called via AJAX to 
- * deliver the contents of 2 JSON files, one of which orders the 
- * data by year, the other by Box Office results.
- *
- * The api page can be called via AJAX either via GET or POST, using a variable 
- * named "cat":
- *
- * <code>
- * api.php?cat=rate
- * </code>
- *
- * In the example above, the parameter cat is loaded with the string "box" 
- * which will indicate to the API to load the JSON file containing 
- * box office results.
- *
- * For troubleshooting, swap out the bondJSON() function with toConsole() 
- * to examine the raw data returned
- *
- * @package bond-web-service
- * @author Bill Newman
- * @version 1.01 2015/02/15
- * @link https://github.com/newmanix/bond-web-service 
- * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see api.php
- * @todo none
- */
--->
+
 <head>
   <meta name="robots" content="noindex,nofollow">
   <title>Mystery Science 3000 Web Service</title>
@@ -38,7 +10,6 @@
   <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
 <!--  <script src="js/ms3000.js" type="text/javascript"></script>-->
   <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
-  
   <script>
   $(document).ready(function() {  
 
@@ -69,10 +40,10 @@ function toConsole(data)
 }
 
 function ms3000JSON(data){
-    $('#output').text(JSON.stringify(data));  //uncomment to view raw output
+	//$('#output').text(JSON.stringify(data));  //uncomment to view raw output
 	var header = data.title;
-	$('#episodetitle').html(header);
-	$.each(data.films, function(i,item){
+	$('#title').html(header);
+	$.each(data.episodes, function(i,item){
 	
 		var text = '<b>Show</b>: ' + item.Show + '<br />';
         text += '<b>Season</b>: ' + item.Season + '<br />';
@@ -84,11 +55,10 @@ function ms3000JSON(data){
 		text += '<b>Writers</b>: ' + item.Writers + '<br />';
         text += '<b>Stars</b>: ' + item.Stars + '<br />';
         text += '<b>Synopsis</b>: ' + item.Synopsis + '<br />';
-		text += '<div id="pic"><img src= "item.Image" /></div>';
+		text += '<div id="pic"><img src='+item.Image+'></div>';
 		$('<div></div>').html(text).appendTo('#episodes');  
 	});
 }
-
   
   </script>
 </head>
@@ -106,7 +76,7 @@ function ms3000JSON(data){
 		<div id="episodes">
 			<p>Episodes will go here</p>
 		</div>
-		<div id="output">Results of JSON.stringify go here</div>
+<!--		<div id="output">Results of JSON.stringify go here</div>-->
       <footer>Information gathered from <a href="http://www.imdb.com">imdb.com</a></footer>
 	</body>
 </html>
